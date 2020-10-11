@@ -1,0 +1,30 @@
+<div class="grid-container padding-container navbar_container">
+  <div class="grid-row">
+    <div class="grid-cell grid-cell-25">
+      <div class="navbar-logo">
+        <a [routerLink]="[menu.length ? menu[0].path : '']"
+          class="navbar-logo--link">
+          <img
+            class="image"
+            src="../../../assets/logo_sportf.jpg"
+            alt="logo_sportf"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="grid-cell grid-cell-70">
+      <div class="navbar-menu">
+        <nav>
+          <a
+            *ngFor="let item of menu"
+            [routerLink]="[item.path]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: false }"
+            class="menu_item"
+            >{{ item.title }}</a
+          >
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
